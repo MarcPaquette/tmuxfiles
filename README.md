@@ -93,6 +93,22 @@ Other:
 - `C-spc /` -- regex search the scrollback (copycat)
 - `C-spc =` -- choose a paste buffer to paste from
 
+### Session persistence
+
+Sessions survive restarts via
+[tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) and
+[tmux-continuum](https://github.com/tmux-plugins/tmux-continuum). State is
+saved automatically every minute and restored when the tmux server starts —
+just run `tmux` after a reboot.
+
+- `C-spc C-s` -- save now
+- `C-spc C-r` -- restore the last save
+
+Windows, pane layouts, working directories and pane contents come back.
+Programs like `vim`, `less` and `top` are relaunched, and Claude Code panes are
+relaunched with `claude --continue` to pick up the most recent conversation in
+that directory.
+
 ### Clipboard
 - `C-spc [` (or `C-M-[`) -- enter copy mode
 - `C-spc ]` (or `C-M-]`) -- paste text that you previously copied in copy mode
